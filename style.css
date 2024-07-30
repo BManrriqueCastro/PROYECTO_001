@@ -3,16 +3,10 @@
     scroll-behavior: smooth;
 }
 
-.montserrat-<uniquifier> {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
 
 body {
     margin: 0;
-    font-family: "Montserrat";
+    font-family: sans-serif;
     background-color: #e2eaff;
     color: #101632;
 }
