@@ -1,0 +1,503 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat";
+    background-color: #e2eaff;
+    color: #101632;
+}
+
+body, div, ul, nav, header, footer, a, li, label {
+    margin: 0;
+    padding: 0;
+}
+/*---------------HEADER------------------*/
+.header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+/**Vamos a comentar los container ya que al momento de implementar las animaciones sería muy complicado ya que no le podemos dar un estilo al propio contenedor*/
+/*segun la resolucion del contenedor o sea el viewport se modificara su contenido
+    container-type: inline-size;
+    container-name: header;
+*/
+/*Posiciona el header por encima del header_nav*/
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #48e;
+}
+/*LOGO DE PAGINA EXTERNA*/
+i {
+    color: #48e;
+    font-size: 1.8rem;
+}
+/*Label contenedor del logo i*/
+.header_button {
+    position: absolute;
+    right: 10px;
+
+}
+/*Input con la clase checkbox que se vuelve invisible en la pagina*/
+.header .header_checkbox[type="checkbox"] {
+    display: none;
+}
+/*Navegacion escondida hasta que el input este chekeado. Darle propiedades aqui antes que en el :cheked consume menos recursos*/
+.header_nav {
+    display: none;
+    position: absolute;
+/*Propiedades para que ocupe todo el alto y ancho del viewport*/
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    /*posiciona el header_nav detras del header*/
+    z-index: -1;
+    background-color: #fff;
+}
+
+/*Lista de navegacion*/
+.header_nav-list {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.5rem;
+}
+/*Si el input tipo checkbox esta cheked entonces el header_nav es visible*/
+.header_checkbox:checked ~ .header_nav {
+    display: flex;
+}
+
+.header_logo {
+    max-width: 100%;
+    width: 90px;
+    margin: 10px 20px;
+}
+
+.header_nav-item {
+    list-style: none;
+}
+
+.header_nav-item a {
+    color: inherit;
+}
+
+/*Cuando los link no esten cliqueados o con el mouse por encima no tendran decoracion esta funcion ahorra codigo y optimiza*/
+.header_nav-item a:not(:is(:hover,:active)) {
+    text-decoration: none;
+}
+
+/*---------------HEADER QUERIES------------------*/
+
+/**Vamos a Cambiar el @container ya que al momento de implementar las animaciones sería muy complicado ya que no le podemos dar un estilo al propio contenedor*/
+/*Para pantallas > o = a 600px aplica estas propiedades*/
+@media screen and (min-width: 600px) {
+
+    .header {
+        padding: 20px 0px;
+        animation: header-movement 1s both;
+        animation-timeline: scroll();
+        position: sticky;
+        top: 0px;
+/*VERIFICAR ERROR DE TITILEO EN EL SCROLL*/
+        animation-range: cover -15px cover 150px;
+        z-index: 1000;
+    }
+
+    .header_nav {
+        display: block;
+        position: static;
+        height: auto;
+        width: auto;
+        justify-content: space-between;
+        background-color: initial;
+    }
+
+    .header_nav-list {
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        margin-right: 2em;
+        gap: 1.2em;
+}
+
+    .header_button {
+        display: none;
+    }
+}
+
+/*---------------PROFAILE SECTION------------------*/
+.profile {
+    container-name: profile;
+    container-type: inline-size;
+    animation: aparecer 2.4s -.6s both;
+}
+
+.profile_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.profile_data-conteiner {
+    max-width: 650px;
+    padding: 15px;
+}
+
+.profile_img-conteiner {
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.profile_img {
+    max-width: 100%;
+    width: 700px;
+}
+
+h1 {
+    color: #26a;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    text-wrap: balance;
+}
+
+.profile_skills-conteiner h2 {
+    color: #26a;
+}
+
+.profile_skill {
+    list-style: none;
+    display: flex;
+    margin: 10px;
+    margin-left: 0;
+    max-width: 600px;
+    align-items: center;
+}
+
+.load_bar {
+    border: 2px solid #48e;
+    color: #fff;
+    border-radius: 8px;
+    padding: 2px;
+    font-size: 10px;
+    width: 80%;
+    margin: 4px;
+    margin-left: 0;
+}
+
+.load-bar_bar {
+    background-color: #48e;
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+.profile_skill-name {
+    padding: 0 5px;
+    color: #48e;
+}
+
+.bar--80 {
+    width: 80%;
+}
+
+.bar--60 {
+    width: 60%;
+}
+
+.bar--20 {
+    width: 20%;
+}
+.bar--10 {
+    width: 11%;
+}
+
+.bar--10 {
+    width: 11%;
+}
+
+/*---------------PROFILE QUERIES------------------*/
+@container profile (min-width: 700px) {
+    .profile_wrapper {
+        flex-direction: row;
+        padding: 20px;
+        background-color: transparent;
+        height: 100vh;
+        margin: auto;
+    }
+
+    .profile_data-conteiner {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        border-radius: 0 20px 20px 0;
+        box-shadow: 0px 0px 10px #0004;
+    }
+
+    h1 {
+        margin: 0;
+        text-wrap: balance;
+        font-size: 4rem;
+    }
+
+    h2 {
+        margin: 0;
+    }
+    .profile_data{
+        max-width: 600px;
+    }
+
+    .profile_img-conteiner {
+        max-height: initial;
+        border-radius: 20px 0 0 20px;
+    }
+    .profile_img {
+        height: 100%;
+        width: 600px;
+        object-fit: cover;
+        background-color: #fff;
+    }
+}
+
+/*---------------PORTFOLIO SECTION------------------*/
+.portfolio {
+    background-color: #18233f;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    container-name: portfolio;
+    container-type: inline-size;
+}
+
+.portfolio_tittle {
+    font-size: 3rem;
+    padding: 0.5em;
+    margin: 0;
+    filter: drop-shadow(0px 0px 2px #28e);
+}
+.portfolio_project-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+    max-width: 1300px;
+    margin: auto;
+    width: 100%;
+    gap: 12px;
+    padding: 12px;
+    min-height: 100vh;
+}
+
+.portfolio_project {
+    background-image: linear-gradient(#000a, #000a), url("../Material/brayan.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    /*CENTRO UN ELEMENTO QUE ESTE DENTRO DE UN DIV*/
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% cover 45%;
+}
+
+.portfolio_project:hover {
+    background-image: linear-gradient(#0003, #000b), url("../Material/brayan.png");
+    opacity: 0.8;
+    outline: 2px solid #e2eaff99;
+}
+
+/*---------------PORTFOLIO QUERIES------------------*/
+@container portfolio (min-width: 880px) {
+    .portfolio_project-container {
+        grid-template-columns: repeat(auto-fill,minmax(420px,1fr));
+
+    }
+
+    .portfolio_project:first-child {
+        grid-column: span 2;
+    }
+
+    .portfolio_project:last-child {
+        grid-column: span 2;
+    }
+}
+
+@container portfolio (min-width: 1260px) {
+    .portfolio_project-container {
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    }
+
+    .portfolio_project:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .portfolio_project:last-child {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+}
+
+/*---------------CONTACT SECTION------------------*/
+.form {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 10px;
+    container-name: form;
+    container-type: inline-size;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 15% contain 40%;
+}
+
+.form h2 {
+    text-align: center;
+    margin: 0;
+    padding: 12px;
+    font-size: 2.5rem;
+}
+.form_form {
+    padding: 15px;
+    max-width: 600px;
+    width: 100%;
+    display: grid;
+    box-shadow: 0px 0px 12px #10163255;
+    border-radius: 12px;
+}
+
+.form_input-container :is(input, textarea) {
+    width: 100%;
+    padding: 9px 6px;
+    font-size: 14px;
+    margin: 5px 0px;
+    border: none;
+    box-shadow: 2px 2px 2px #26a4;
+    border-radius: 8px;
+}
+
+.form_input-container textarea {
+    font-family: inherit;
+    resize: none;
+}
+
+.form_input-container input[type="submit"] {
+    background-color: #26a;
+    color: #e2eaff;
+    width: 50%;
+    transition: box-shadow 0.2s ease-in;
+}
+
+.form_input-container input[type="submit"]:hover {
+    
+    box-shadow: 0px 0px 5px #26a;
+}
+
+.button {
+    text-align: center;
+}
+
+/*---------------HEADER ENDS------------------*/
+@container form (min-width: 600px) {
+    .form_form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "name lastname"
+        "email email"
+        "message message"
+        "submit submit";
+        gap: 12px
+    }
+
+    .form_input-container:first-child {
+        grid-area: name
+    }
+
+    .form_input-container:nth-child(2) {
+        grid-area: lastname;
+    }
+
+    .form_input-container:nth-child(3) {
+        grid-area: email;
+    }
+
+    .form_input-container:nth-child(4) {
+        grid-area: message;
+    }
+
+    .form_input-container:last-child {
+        grid-area: submit;
+    }
+}
+
+/*---------------FOOTER------------------*/
+
+footer {
+    min-height: 20vh;
+    background-color: #18233f;
+    color: #fff;
+    padding: 20px;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+footer ul li {
+    list-style: none;
+}
+
+footer ul li a {
+    color: #ddd;
+    font-weight: 300;
+    text-underline-offset: 0.4em; /*? Coloca un espacio entre el texto del link y la linea que lo resalta */
+}
+
+footer ul li a:not(:is(:hover,:active)) {
+    text-decoration: none;
+}
+
+footer aside {
+    font-size: 0.8em;
+    padding: 1.8em 0em 0em 0em;
+    font-weight: 200;
+}
+
+/*---------------ANIMACIONES------------------*/
+
+@keyframes header-movement {
+    from {
+        padding: 20px 0;
+        background-color: #fff;
+    }
+
+    to {
+        padding: 0px;
+        background-color: #10163266;
+        color: #fff;
+    }
+}
+
+
+@keyframes aparecer {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

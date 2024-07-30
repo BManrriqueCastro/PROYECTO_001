@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css"> <!--GENERADO PARA CREAR NUESTRAS PROPIAS TIPOGRAFIAS-->
+    <script src="https://kit.fontawesome.com/b945675622.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <!--Generando un menu desplegable-->
+        <input type="checkbox" class="header_checkbox" id="open-menu">
+        <label class="header_button" for="open-menu" role="button">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <!--Aquí iría un logo propio-->
+        <div class="header_logo-container">
+            <img src="../Material/Logo_onepiece-min.png" alt="logo de one piece" class="header_logo">
+        </div>
+        <!--Generndo una barra de navegación-->
+        <nav class="header_nav">
+            <ul class="header_nav-list">
+                <li class="header_nav-item">
+                    <a href="#about">About</a>
+                </li>
+                <li class="header_nav-item">
+                    <a href="#mi_portfolio-projects">Portfolio</a>
+                </li>
+                <li class="header_nav-item">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="profile" id="about"> <!--*PRESENTACION-->
+        <div class="profile_wrapper"> <!--Un wrapper solo es una caja para poder controlar limites de medidas en css-->
+            <div class="profile_img-conteiner">
+                <img src="../Material/mi_foto_sin_fondo.png" class="profile_img" alt="Brayan Manrique Programador Full-stack">
+            </div>
+            <div class="profile_data-conteiner"> <!--SECCION DE INFORMACIÓN-->
+                <div class="profile_data">
+                    <div class="profile_description"> <!--Perfil de descripcion-->
+                        <h1>¿Quien es Brayan Manrique?</h1>
+                        <p>¡Hola! Soy Brayan Andres Manrique Castro, un apasionado programador full stack con un enfoque dedicado, responsable y altamente efectivo. Originario de Cali, Colombia, tengo 21 años y estoy en constante búsqueda de mejorar mis habilidades en el desarrollo web.</p>
+                    </div>
+                    <div class="profile_skills-conteiner"> <!--Perfil de habilidades-->
+                        <h2>SKILLS</h2> <!--HABILIDADES-->
+                        <ul>
+                            <li class="profile_skill">
+                                <div class="load_bar"> <!--GENERANDO UNA BARRA DE CARGA-->
+                                    <div class="load-bar_bar bar--80">80%</div>
+                                </div>
+                                <span class="profile_skill-name">HTML</span>
+                            </li>
+
+                            <li class="profile_skill">
+                                <div class="load_bar"> <!--BARRA DE CARGA-->
+                                    <div class="load-bar_bar bar--60">60%</div>
+                                </div>
+                                <span class="profile_skill-name">CSS</span>
+                            </li>
+
+                            <li class="profile_skill">
+                                <div class="load_bar"> <!--BARRA DE CARGA-->
+                                    <div class="load-bar_bar bar--20">20%</div>
+                                </div>
+                                <span class="profile_skill-name">JS</span>
+                            </li>
+
+                            <li class="profile_skill">
+                                <div class="load_bar"> <!--BARRA DE CARGA-->
+                                    <div class="load-bar_bar bar--10">10%</div>
+                                </div>
+                                <span class="profile_skill-name">REACT</span>
+                            </li>
+
+                            <li class="profile_skill">
+                                <div class="load_bar"> <!--BARRA DE CARGA-->
+                                    <div class="load-bar_bar bar--10">10%</div>
+                                </div>
+                                <span class="profile_skill-name">TS</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="portfolio" id="mi_portfolio-projects"> <!--SECCION DE PROYECTOS-->
+        <h2 class="portfolio_tittle" >PORTFOLIO SECTION</h2>
+        <div class="portfolio_project-container">
+            <div class="portfolio_project">
+                <h2 class="portfolio_project-name">PROJECT 1</h2>
+            </div>
+            <div class="portfolio_project">
+                <h2 class="portfolio_project-name">PROJECT 2</h2>
+            </div>
+            <div class="portfolio_project">
+                <h2 class="portfolio_project-name">PROJECT 3</h2>
+            </div>
+            <div class="portfolio_project">
+                <h2 class="portfolio_project-name">PROJECT 4</h2>
+            </div>
+            <div class="portfolio_project">
+                <h2 class="portfolio_project-name">PROJECT 5</h2>
+            </div>
+            <div class="portfolio_project">
+                <h2 class="portfolio_project-name">PROJECT 6</h2>
+            </div>
+        </div>
+    </section>
+    <section class="form"> <!--SECCION DE CONTACTO-->
+        <h2 id="contact">CONTACT</h2>
+        <form class="form_form">
+            <div class="form_input-container">
+                <label>Nombre
+                    <input type="text" placeholder="John">
+                </label>
+            </div>
+            <div class="form_input-container">
+                <label>Apellido
+                    <input type="text" placeholder="Doe">
+                </label>
+            </div>
+            <div class="form_input-container">
+                <label>E-mail
+                    <input type="email" placeholder="John.Doe@gmail.com">
+                </label>
+            </div>
+            <div class="form_input-container">
+                <label>Mensaje
+                    <textarea name="Mensaje" id="Mensaje" rows="5" placeholder="Deja tu mensaje"></textarea>
+                </label>
+            </div>
+            <div class="form_input-container button">
+                <input type="submit" name="button">
+            </div>
+        </form>
+    </section>
+    <footer>            <!--PIE DE PAGINA-->
+        <h3>REDES</h3>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/bamc202/" target="_blank" rel="noopener">Linkedin</a></li>
+            <li><a href="https://github.com/BManrriqueCastro" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.instagram.com/bryan_man202/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+        <aside>BAMC - Copyright</aside>
+    </footer>
+</body>
+</html>
