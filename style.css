@@ -315,7 +315,7 @@ h1 {
 }
 
 .portfolio_project:hover {
-    background-image: linear-gradient(#0003, #000b), url("../Material/brayan.png");
+    background-image: linear-gradient(#0003, #000b), url("brayan.png");
     opacity: 0.8;
     outline: 2px solid #e2eaff99;
 }
